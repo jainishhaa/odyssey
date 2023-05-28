@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+
+<body>
+  <!--HEADER-->
+  <!--HEADER-->
+  <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div class="logo">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="#F59E0B"/>
+          <path d="M50,30 Q60,40 70,50 Q60,60 50,70 Q40,60 30,50 Q40,40 50,30 z" fill="black"/>
+        </svg>
+        <h1 class="logo-text">Odyssey</h1>
+      </div>
+      <nav
+          class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+          <a href="http://127.0.0.1:5500/indx.html/indx.html" 
+            class="mr-5 hover:text-white">Home</a>
+          <a href="http://127.0.0.1:5500/indx.html/treasurehunt.html" 
+            class="mr-5 hover:text-white">Treasure Hunt</a>
+          <a href="http://127.0.0.1:5500/indx.html/posts.html"
+            class="mr-5 hover:text-white">Scavenger Hunt</a>
+          <a href="http://127.0.0.1:5500/indx.html/puzzle/puzzle2/index.html" 
+            class="mr-5 hover:text-white">Puzzle</a>
+   
+        </nav>
+  
+      <a href="http://127.0.0.1:5500/indx.html/signin.html"
+        class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Sign
+        in
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+  
+  
+          <script>
+            const answerCodes = {
+              "lockedImage1": "Uttar Pradesh",
+            };
+  
+            function checkAnswer(codeId, lockedImageId, unlockedImageId) {
+              // Get the user's input from the form
+              const userCode = document.getElementById(codeId).value;
+  
+              // Get the correct answer code for the clicked image
+              const correctCode = answerCodes[lockedImageId];
+  
+              if (userCode === correctCode) {
+                // If the user's code matches the correct code, unlock the corresponding images
+                document.getElementById(lockedImageId).style.display = "none";
+                document.getElementById(unlockedImageId).style.display = "block";
+                alert("Congratulations! You have unlocked the image.");
+              } else {
+                // If the user's code does not match, show an error message
+                alert("Sorry, the code you entered is incorrect. Please try again.");
+              }
+  
+              // Clear the input field after the user submits the form
+              document.getElementById(codeId).value = "";
+            }
+          </script>
+  
+  
+  
+  
+  
+          <style>
+  
+            .logo {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              width: 150px;
+            }
+            
+            .logo svg {
+              position: absolute;
+              top: -20%;
+              left: -20%;
+              width: 150%;
+              height: 150%;
+              fill: none;
+              stroke: white;
+              stroke-width: 5;
+              stroke-dasharray: 300;
+              stroke-dashoffset: 300;
+              animation: dash 8s ease-in-out forwards;
+            }
+            
+            .logo-text {
+              font-family: 'Pacifico', cursive;
+              font-size: 1.9rem;
+              color: #03022b;;
+              text-shadow: 2px 2px white;
+              margin-left: 20px;
+              opacity: 0;
+              animation: slide 7s ease-in-out forwards;
+            }
+            
+            @keyframes dash {
+              to {
+                stroke-dashoffset: 0;
+              }
+            }
+            
+            @keyframes slide {
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+  
+  
+            img {
+              width: 1200px;
+              height: 500px;
+            }
+  
+            .image-container {
+              position: relative;
+            }
+  
+            .image-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              opacity: 0;
+              background-color: rgba(0, 0, 0, 0.5);
+              transition: opacity 0.5s ease;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+  
+            .image-container:hover .image-overlay {
+              opacity: 1;
+            }
+  
+            .image-overlay p {
+              color: #fff;
+              font-size: 15px;
+              text-align: center;
+  
+  
+            }
+          </style>
+  
+        </svg>
+      </a>
+    </div>
+  </header>
+  
+    <!--POSTS-->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-4">
+          <div class="p-4 md:w-1/3">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1576068070379-819c2bcd2c3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHN1bmxpZ2h0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="blog">
+              <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">GUESS THE WORD</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Clue-1</h1>
+                <p class="leading-relaxed mb-3">I have a brim and a crown,
+                  But I am not a monarch's gown.
+                  I am often worn outdoors,
+                  Protecting heads from sun and showers.
+                  What am I?</p>
+                <div class="flex items-center flex-wrap ">
+                  <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>1.2K
+                  </span>
+                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGJyZWFrZmFzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60/721x401" alt="blog">
+              <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">PICK THE FIRST LETTER</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Clue-2</h1>
+                <p class="leading-relaxed mb-3">I am fragile and small,
+                  But with a yolk so bright,
+                  I make breakfast for all,
+                  A perfect start to the day or night.</p>
+                <div class="flex items-center flex-wrap">
+                  <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>1.2K
+                  </span>
+                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1483569577148-f14683bed627?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFyZCUyMHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60/722x402" alt="blog">
+              <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">UNJUMBLE THE LETTERS</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Clue-3</h1>
+                <p class="leading-relaxed mb-3">I am small and hard-working,
+                  A symbol of diligence and might.
+                  I carry a load many times my size,
+                  And can crawl through the tiniest crack or crevice.</p>
+                <div class="flex items-center flex-wrap ">
+                  <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>1.2K
+                  </span>
+                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-400 bg-gray-900 body-font overflow-hidden">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="-my-8 divide-y-2 divide-gray-800">
+          <div class="py-8 flex flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-white">Clue-4</span>
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-white title-font mb-2">Sometimes, the answer to a clue may be something unexpected or unconventional.</h2>
+              <p class="leading-relaxed">I am something that's always sought,
+                By those in love, and those in thought.
+                I'm the symbol of a promise made,
+                And often given on a special day.
+                What am I?</p>
+              <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-400 inline-flex items-center mt-4">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-white">Clue-5</span>
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-white title-font mb-2">Don't be afraid to think creatively, consider all possibilities, even if they seem unlikely at first.</h2>
+              <p class="leading-relaxed">I'm the one that's always in bloom,
+                A symbol of love that fills the room.
+                I come in many shapes and hues,
+                And I'm the one that's always true.
+                What am I?</p>
+              <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-400 inline-flex items-center mt-4">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-white">Clue-6</span>
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-white title-font mb-2">If the clue seems too cryptic or difficult to decipher, click on learn more.</h2>
+              <p class="leading-relaxed">I'm the one that's often hard to see,
+                A force that's subtle, but always free.
+                I'm the one that's always around,
+                And I'm the one that's never bound.
+                What am I?</p>
+              <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-400 inline-flex items-center mt-4">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!--LIGHT-->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-4">
+          <div class="p-4 md:w-1/3">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/26/pelican.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fHNlYSUyMGFuaW1hbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt="blog">
+              <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">VISIT OUR INSTAGRAM HANDLE</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Clue-7</h1>
+                <p class="leading-relaxed mb-3">I'm the one that's often in the sea,
+                  A creature that's graceful, but always free.
+                  I come in many shapes and often trained,
+                  And I'm the one that always surprises.
+                  What am I?</p>
+                <div class="flex items-center flex-wrap ">
+                  <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>1.2K
+                  </span>
+                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1548475390-f6908921aaf8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHJhaW5ib3d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60/721x401" alt="blog">
+              <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">KNOW MORE ABOUT CLUES</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">  Clue-8</h1>
+                <p class="leading-relaxed mb-3">I am a daily event that you may often see,
+                  I bring an array of colors and beauty to thee.
+                  As the day draws to a close, I take my place,
+                  A spectacle to behold, with a calming grace.</p>
+                <div class="flex items-center flex-wrap">
+                  <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>1.2K
+                  </span>
+                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1481754100984-dbae571fe45b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c2hhZG93fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60/722x402" alt="blog">
+              <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CRACK THE HINTS</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Clue-9</h1>
+                <p class="leading-relaxed mb-3">I'm something that's always in motion,
+                  But can't be seen in any notion.
+                  I'm the force that moves the tide,
+                  And I'm always there, right by your side.
+                  What am I?</p>
+                <div class="flex items-center flex-wrap ">
+                  <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>1.2K
+                  </span>
+                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-400 bg-gray-900 body-font overflow-hidden">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="-my-8 divide-y-2 divide-gray-800">
+          <div class="py-8 flex flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-white">Clue-10</span>
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-white title-font mb-2">A step closer to the "ODYSSEY"</h2>
+              <p class="leading-relaxed">I am something that can be hot or cold. I often rise and fall throughout the day. I am can be influenced by the sun, the wind, and the rain too. I rise with the sun and falls with it too.</p>
+              <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-400 inline-flex items-center mt-4">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-white">Clue-11</span>
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-white title-font mb-2">Unjumble the first letters of each answer to guess the correct state where the treasure is buried</h2>
+              <p class="leading-relaxed">I open and close, but I don't have a hinge or a lock. I'm often found in the rain, and sun. I have ribs, but no spine. I have spokes, but I'm not a wheel. I have a handle, a canopy, but no lock or key. What am I?</p>
+              <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-400 inline-flex items-center mt-4">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-white">Clue-12</span>
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-white title-font mb-2">You may visit our instagram handle for more hints</h2>
+              <p class="leading-relaxed">I come in many shapes and sizes,
+                Twisted, curled, and even surprises.
+                I'm made of flour, eggs, and water,
+                Cooked in a pot, and served on a platter.
+                What am I?</p>
+              <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-yellow-400 inline-flex items-center mt-4">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-col px-5 py-5 justify-center items-center">
+        <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Guess The State: Get 1 Step Closer To The
+            Treasure!</h1>
+          <p class="mb-8 leading-relaxed">Determine the right order of the letters by applying your problem-solving
+            abilities. After correctly rearranging the letters, you will have the state's name which you
+            must fill in order to unlock the chest below.</p>
+          <!-- <div class="flex w-full justify-center items-end">
+            <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/5 md:w-full text-left"> -->
+    
+    
+    
+          <div class="form-container">
+            <form>
+              <label for="code1">Enter the state:</label>
+              <input type="text" id="code1" name="code" placeholder="   Enter here" required>
+              <input type="submit" onclick="checkAnswer('code1', 'lockedImage1', 'unlockedImage1')"
+                class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+            </form>
+          </div>
+    
+          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+          <a class="text-yellow-500">Example: Tamil Nadu</a>
+            </div>
+          <!-- class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-yellow-200 focus:bg-transparent border border-gray-300 focus:border-yellow-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
+          <!-- </div>
+            <button
+              class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Submit</button>
+          </div>
+          <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Neutra shabby chic ramps, viral fixie.</p> -->
+        </div>
+      </div>
+    </section>
+    <style>
+      #code1{
+        border-width: 2px ;
+        border-color: black;
+        border-radius: 4px;
+        padding:8.5px ;
+        
+      }  
+    </style>
+
+    <section class="text-gray-400 bg-gray-900 body-font">
+      <div class="container px-5 py-24 mx-auto flex flex-col">
+        <div class="lg:w-4/6 mx-auto">
+    
+    
+          <!-- <div class="rounded-lg h-64 overflow-hidden"> -->
+          <div class="image-container">
+            <img id="lockedImage1"
+              src="https://images.unsplash.com/photo-1573377068313-4840a06bdfb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGxvY2tlZCUyMHRyZWFzdXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              width="1200px" height="500px">
+            <div class="image-overlay">
+              <p>The town holds cultural and religious significance as it is the birthplace and home of the Hindu god. It is a popular pilgrimage place among Hindus.</p>
+            </div>
+            <img id="unlockedImage1"
+              src="laddoo_holi.JPG"
+              alt="coffee" width="1200px" height="500px" style="display: none;">
+          </div>
+    
+    
+          <!-- </div> -->
+          
+      </div>
+    </section>
+    
+    <!--SEMI FOOTER-->
+
+
+  <div>
+    <div
+      class="flex flex-col px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:flex-row">
+      <div class="mb-5 lg:w-1/3 lg:mb-0 lg:mr-20">
+        <h2 class="relative mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+          <span class="relative inline-block">
+            <svg viewBox="0 0 52 24" fill="currentColor"
+              class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+              <defs>
+                <pattern id="6bfa0e57-faa2-4bb2-ac0e-310782e5eb2d" x="0" y="0" width=".135" height=".30">
+                  <circle cx="1" cy="1" r=".7"></circle>
+                </pattern>
+              </defs>
+              <rect fill="url(#6bfa0e57-faa2-4bb2-ac0e-310782e5eb2d)" width="52" height="24"></rect>
+            </svg>
+            <span class="relative">Odyssey</span>
+          </span>
+          Officials
+        </h2>
+        <p class="mb-4 text-gray-900 lg:mb-6">
+          There is something truly exhilarating about solving a challenging puzzle. The thrill of discovering a hidden clue, piecing together disparate elements, and ultimately unraveling the mystery is a feeling like no other.
+        </p>
+        <a href="http://127.0.0.1:5500/indx.html/indx.html" aria-label=""
+          class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+          Learn more
+          <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path
+              d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z">
+            </path>
+          </svg>
+        </a>
+      </div>
+      <div class="flex-grow pt-1">
+        <div class="flex items-center mb-3">
+          <span class="font-bold tracking-wide text-gray-900">Categories</span>
+          <span class="ml-1">
+            <svg class="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
+              <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+            </svg>
+          </span>
+        </div>
+        <div class="grid grid-cols-2 row-gap-6 sm:grid-cols-4">
+          <ul class="space-y-2">
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">TREASURE HUNT</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+          </ul>
+          <ul class="space-y-2">
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">SCAVENGER HUNT</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+          </ul>
+          <ul class="space-y-2">
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">PUZZLE SOLVING</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+          </ul>
+          <ul class="space-y-2">
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+            </li>
+            <li>
+              <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">IMAGE UNLOCKING</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="text-gray-400 bg-gray-900 body-font">
+      <div class="container px-8 py-2 mx-auto">
+        <div class="lg:w-2/8 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+          <h1 class="flex-grow sm:pr-16 text-s font-medium title-font text-white">"Follow the footsteps of those who came before you, and you may uncover the secrets of the past. But be warned: the path to treasure is rarely straight, and those who stray too far may never find their way back."</h1>
+        </div>
+      </div>
+    </section> 
+
+
+  <!--FOOTER-->
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <div class="logo">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="50" fill="#F59E0B"/>
+          <path d="M50,30 Q60,40 70,50 Q60,60 50,70 Q40,60 30,50 Q40,40 50,30 z" fill="black"/>
+        </svg>
+        <h1 class="logo-text">Odyssey</h1>
+      </div>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023
+        Odyssey —
+        <a href="https://instagram.com/odyssey_officials?igshid=NTc4MTIwNjQ2YQ==" class="text-gray-600 ml-1" rel="noopener noreferrer"
+          target="_blank">@Odyssey_Officials</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path
+              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+            </path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none"
+              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+
+    
+    
+</body>
+</html>
+    

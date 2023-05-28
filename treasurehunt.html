@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!--HEADER-->
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <div class="logo">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#F59E0B" />
+                    <path d="M50,30 Q60,40 70,50 Q60,60 50,70 Q40,60 30,50 Q40,40 50,30 z" fill="black" />
+                </svg>
+                <h1 class="logo-text">Odyssey</h1>
+            </div>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+                <a href="http://127.0.0.1:5500/indx.html/indx.html" class="mr-5 hover:text-white">Home</a>
+                <a href="http://127.0.0.1:5500/indx.html/treasurehunt.html" class="mr-5 hover:text-white">Treasure
+                    Hunt</a>
+                <a href="http://127.0.0.1:5500/indx.html/posts.html" class="mr-5 hover:text-white">Scavenger Hunt</a>
+                <a href="http://127.0.0.1:5500/indx.html/puzzle/puzzle2/index.html"
+                    class="mr-5 hover:text-white">Puzzle</a>
+
+            </nav>
+
+            <a href="http://127.0.0.1:5500/indx.html/signin.html"
+                class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Sign
+                in
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+
+
+                    <script>
+                        const answerCodes = {
+                            "lockedImage1": "Matree Temple",
+                        };
+
+                        function checkAnswer(codeId, lockedImageId, unlockedImageId) {
+                            // Get the user's input from the form
+                            const userCode = document.getElementById(codeId).value;
+
+                            // Get the correct answer code for the clicked image
+                            const correctCode = answerCodes[lockedImageId];
+
+                            if (userCode === correctCode) {
+                                // If the user's code matches the correct code, unlock the corresponding images
+                                document.getElementById(lockedImageId).style.display = "none";
+                                document.getElementById(unlockedImageId).style.display = "block";
+                                alert("Congratulations! You have unlocked the treasure");
+                            } else {
+                                // If the user's code does not match, show an error message
+                                alert("Sorry, the code you entered is incorrect. Please try again.");
+                            }
+
+                            // Clear the input field after the user submits the form
+                            document.getElementById(codeId).value = "";
+                        }
+                    </script>
+
+                </svg>
+
+
+                <style>
+                    .logo {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        width: 150px;
+                    }
+
+                    .logo svg {
+                        position: absolute;
+                        top: -20%;
+                        left: -20%;
+                        width: 150%;
+                        height: 150%;
+                        fill: none;
+                        stroke: white;
+                        stroke-width: 5;
+                        stroke-dasharray: 300;
+                        stroke-dashoffset: 300;
+                        animation: dash 8s ease-in-out forwards;
+                    }
+
+                    .logo-text {
+                        font-family: 'Pacifico', cursive;
+                        font-size: 1.9rem;
+                        color: #03022b;
+                        ;
+                        text-shadow: 2px 2px rgb(255, 255, 255);
+                        margin-left: 20px;
+                        opacity: 0;
+                        animation: slide 7s ease-in-out forwards;
+                    }
+
+                    @keyframes dash {
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    @keyframes slide {
+                        to {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+
+
+                    img {
+                        width: 1200px;
+                        height: 500px;
+                    }
+
+                    .image-container {
+                        position: relative;
+                    }
+
+                    .image-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        opacity: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        transition: opacity 0.5s ease;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .image-container:hover .image-overlay {
+                        opacity: 1;
+                    }
+
+                    .image-overlay p {
+                        color: #fff;
+                        font-size: 15px;
+                        text-align: center;
+
+
+                    }
+                </style>
+
+            </a>
+        </div>
+    </header>
+
+
+    <!--CONTENT-->
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col">
+                <div class="h-1 bg-gray-200 rounded overflow-hidden">
+                    <div class="w-24 h-full bg-yellow-500"></div>
+                </div>
+                <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
+                    <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">Follow The Steps To
+                        Unlock The Treasure!</h1>
+                    <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Follow the clues, decipher the riddles,
+                        and navigate the treacherous terrain that lies ahead. Trust in yourself and your instincts, for
+                        only those with the courage to push beyond their limits can hope to uncover the treasure that
+                        awaits. With each step forward, you will be one step closer to unlocking the secrets of this
+                        ancient treasure, and discovering the power and riches that lie within.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--one pic-->
+    <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+
+
+
+                <span class="image-row">
+                    <span class="image-container">
+                        <img id="lockedImage1" class="object-cover object-center rounded"
+                            src="https://lh3.googleusercontent.com/blFka9jpKLL-QuxxgXFX-_jdCC6VboK8wLQ8-kJRUzcjDvOCt2BdX7l_2Swe9XFqPOad7gV04vTJ3JIFowS8Y30a2zg1ZYxzpPIuRS_2"
+                            width="400px" height="400 px">
+                        <span class="image-overlay">
+                            <p>UNLOCK ME!</p>
+                        </span>
+                        <img id="unlockedImage1" class="object-cover object-center rounded"
+                            src="https://cdn.dribbble.com/users/45481/screenshots/3041094/chest.gif" alt="treasure"
+                            width="400px" height="400 px" style="display: none;">
+                    </span>
+
+
+            </div>
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">The Treasure Of Odyssey</h1>
+                <p class="mb-8 leading-relaxed">Hidden deep within the vast expanse of uncharted wilderness lies a
+                    mysterious treasure beyond your wildest dreams. To uncover its secrets, you must first embark on a
+                    journey of discovery, armed with nothing but your wits and your determination.</p>
+                <div class="flex w-full md:justify-start justify-center items-end">
+                    <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4">
+                        <label for="hero-field" class="leading-7 text-sm text-gray-400">Enter the location to unlock the
+                            Treasure.</label>
+
+
+
+                        <span class="image-row">
+                            <span class="form-container">
+                                <input type="text" id="code1" name="code" required
+                                    class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-yellow-900 focus:bg-transparent focus:border-yellow-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    </div>
+                    <button type="button" onclick="checkAnswer('code1', 'lockedImage1', 'unlockedImage1')"
+                        class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Submit</button>
+                </div>
+                </span>
+                </span>
+                <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Eg: Red Fort, Chandni Chowk. [HINT: 2-word answer]</p>
+            </div>
+        </div>
+    </section>
+
+    <!--step1-->
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+            <div class="flex mx-auto flex-wrap mb-20">
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-yellow-500 text-yellow-500 tracking-wider rounded-t">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>STEP 1
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>STEP 2
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="3"></circle>
+                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                    </svg>STEP 3
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>STEP 4
+                </a>
+            </div>
+            <img class="l:w-1/4 l:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded"
+                alt="hero"
+                src="https://images.unsplash.com/photo-1597742200037-aa4d64d843be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxwdXp6bGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60">
+            <div class="flex flex-col text-center w-full">
+                <h1 class="text-xl font-medium title-font mb-4 text-gray-900">Solve The Clues of Scavenger Hunt!</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">In this scavenger hunt, you will receive one word
+                    from each clue. In order to find the state of treasure, use the first letter of each word, which you
+                    must then rearrange to create the name of a state. To determine the right order of the letters,
+                    you'll need to apply your problem-solving abilities. After correctly rearranging the letters, you
+                    will have the state's name which you must fill in order to complete the hunt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--step2-->
+    <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+            <div class="flex mx-auto flex-wrap mb-20">
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium  inline-flex items-center leading-none border-gray-800 hover:text-white tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>STEP 1
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-800 inline-flex items-center leading-none border-yellow-500 text-white tracking-wider rounded-t">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>STEP 2
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-800 hover:text-white tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="3"></circle>
+                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                    </svg>STEP 3
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-800 hover:text-white tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>STEP 4
+                </a>
+            </div>
+            <img class="l:w-1/4 l:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded"
+                alt="hero"
+                src="https://images.unsplash.com/photo-1571397872194-0ad8fbafe058?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHB1enpsZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60/720x600">
+            <div class="flex flex-col text-center w-full">
+                <h1 class="text-xl font-medium title-font mb-4 text-white">Solve The Puzzles!</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">A puzzle is a game or a task that involves the
+                    ability to solve problems creatively. By putting puzzle pieces in the right order, responding to
+                    questions, or locating hidden items, you can solve the problem or finish the game. Puzzles may be a
+                    exciting method to mentally challenge oneself, enhance cognitive function, and reduce stress. They
+                    can also be enjoyable activities that challenge oneself.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--step3-->
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+            <div class="flex mx-auto flex-wrap mb-20">
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>STEP 1
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>STEP 2
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-yellow-500 text-yellow-500 tracking-wider rounded-t">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="3"></circle>
+                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                    </svg>STEP 3
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>STEP 4
+                </a>
+            </div>
+            <img class="l:w-1/4 l:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded"
+                alt="hero"
+                src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzd8fGFuY2llbnQlMjBtYXB8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60/720x600">
+            <div class="flex flex-col text-center w-full">
+                <h1 class="text-xl font-medium title-font mb-4 text-gray-900">Find The Location of Chest!</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">In order to access a picture in a game, you often
+                    need to finish a certain mission or satisfy a set of requirements.In order to achieve success either
+                    a puzzle must be completed, or a word must be deciphered from provided hints or clues, or a specific
+                    quantity of objects must be gathered, or a level or region of the game must be completed. The
+                    picture will be unlocked and available for viewing once the necessary requirements have been met.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--step4-->
+    <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+            <div class="flex mx-auto flex-wrap mb-20">
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-800 hover:text-white tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>STEP 1
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-800 hover:text-white tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>STEP 2
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-800 hover:text-white tracking-wider">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="3"></circle>
+                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                    </svg>STEP 3
+                </a>
+                <a
+                    class="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-800 inline-flex items-center leading-none border-yellow-500 text-white tracking-wider rounded-t">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 mr-3" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>STEP 4
+                </a>
+            </div>
+            <img class="l:w-1/4 l:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded"
+                alt="hero"
+                src="https://images.unsplash.com/photo-1669235965241-ec4fe9569cc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjE2fHx0cmVhc3VyZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60/720x600">
+            <div class="flex flex-col text-center w-full">
+                <h1 class="text-xl font-medium title-font mb-4 text-white">Unlock The Treasure!</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">You must enter a particular area in order to
+                    obtain the treasure. This place might be a set of map coordinates, a specific structure or landmark,
+                    or a secret spot that you need to find via hints or riddles. Overall, because it includes
+                    exploration, discovery, and the satisfaction of overcoming a task, getting into the area to obtain
+                    the treasure may be an exciting and satisfying procedure</p>
+            </div>
+        </div>
+    </section>
+
+    <!--SEMI FOOTER-->
+
+
+    <div>
+        <div
+            class="flex flex-col px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:flex-row">
+            <div class="mb-5 lg:w-1/3 lg:mb-0 lg:mr-20">
+                <h2
+                    class="relative mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                    <span class="relative inline-block">
+                        <svg viewBox="0 0 52 24" fill="currentColor"
+                            class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                            <defs>
+                                <pattern id="6bfa0e57-faa2-4bb2-ac0e-310782e5eb2d" x="0" y="0" width=".135"
+                                    height=".30">
+                                    <circle cx="1" cy="1" r=".7"></circle>
+                                </pattern>
+                            </defs>
+                            <rect fill="url(#6bfa0e57-faa2-4bb2-ac0e-310782e5eb2d)" width="52" height="24"></rect>
+                        </svg>
+                        <span class="relative">Odyssey</span>
+                    </span>
+                    Officials
+                </h2>
+                <p class="mb-4 text-gray-900 lg:mb-6">
+                    There is something truly exhilarating about solving a challenging puzzle. The thrill of discovering
+                    a hidden clue, piecing together disparate elements, and ultimately unraveling the mystery is a
+                    feeling like no other.
+                </p>
+                <a href="http://127.0.0.1:5500/indx.html/indx.html" aria-label=""
+                    class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+                    Learn more
+                    <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+                        <path
+                            d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <div class="flex-grow pt-1">
+                <div class="flex items-center mb-3">
+                    <span class="font-bold tracking-wide text-gray-900">Categories</span>
+                    <span class="ml-1">
+                        <svg class="w-5 h-5 mt-px text-deep-purple-accent-400" stroke="currentColor"
+                            viewBox="0 0 52 52">
+                            <polygon stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                        </svg>
+                    </span>
+                </div>
+                <div class="grid grid-cols-2 row-gap-6 sm:grid-cols-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">TREASURE
+                                HUNT</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">SCAVENGER
+                                HUNT</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">PUZZLE
+                                SOLVING</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/"
+                                class="transition-colors duration-300 hover:text-deep-purple-accent-700">-----</a>
+                        </li>
+                        <li>
+                            <a href="/" class="transition-colors duration-300 hover:text-deep-purple-accent-700">IMAGE
+                                UNLOCKING</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="text-gray-400 bg-gray-900 body-font">
+            <div class="container px-8 py-2 mx-auto">
+                <div class="lg:w-2/8 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+                    <h1 class="flex-grow sm:pr-16 text-s font-medium title-font text-white">"Follow the footsteps of
+                        those who came before you, and you may uncover the secrets of the past. But be warned: the path
+                        to treasure is rarely straight, and those who stray too far may never find their way back."</h1>
+                </div>
+            </div>
+        </section>
+
+
+        <!--FOOTER-->
+        <footer class="text-gray-600 body-font">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="50" fill="#F59E0B" />
+                        <path d="M50,30 Q60,40 70,50 Q60,60 50,70 Q40,60 30,50 Q40,40 50,30 z" fill="black" />
+                    </svg>
+                    <h1 class="logo-text">Odyssey</h1>
+                </div>
+                <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                    2023
+                    Odyssey —
+                    <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer"
+                        target="_blank">@Odyssey_Officials</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                    <a class="text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>

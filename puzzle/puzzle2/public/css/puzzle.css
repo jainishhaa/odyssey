@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Puzzle {
+    background-color: #ffffff;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Puzzle__Container {
+    border: 0.5rem solid #030433;
+    
+    background-color: rgb(255, 162, 0);
+    color: rgb(255, 255, 255);
+    width: 200px;
+    border-radius: 0.2rem;
+    text-align: center;
+  }
+  
+  .Puzzle__Title {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-family: "Franklin Gothic Medium", "Arial ", Arial, sans-serif;
+    font-weight: 800;
+  }
+  
+  .Puzzle__Board {
+    display: grid;
+    
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .Puzzle__Pieces {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .Puzzle__Img {
+    width: 100%;
+    height: 100%;
+    border: 0.08rem dotted #080438;
+  }
+  
+  @media (min-width: 768px) {
+    .Puzzle__Container {
+      width: 500px;
+    }
+  }
